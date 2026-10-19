@@ -349,7 +349,7 @@
     dock.addEventListener('pointerleave', function () { dl.forEach(function (a) { a.style.setProperty('--s', 1); }); });
   }
 
-  /* ---------- cursor, preview, magnet, tilt, spark ---------- */
+  /* ---------- cursor, magnet, tilt, spark ---------- */
   if (fine) {
     var cursor = $('.cursor'), cl = $('span', cursor);
     var cx = gsap.quickTo(cursor, 'x', { duration: .45, ease: 'power3' }), cy = gsap.quickTo(cursor, 'y', { duration: .45, ease: 'power3' });
@@ -364,13 +364,6 @@
     hover('.project', 'Drag');
     hover('.publication', 'Read');
     hover('#scene', 'Send path');
-
-    var pv = $('.preview'), pimg = $('img', pv), px = gsap.quickTo(pv, 'x', { duration: .6, ease: 'power3' }), py = gsap.quickTo(pv, 'y', { duration: .6, ease: 'power3' });
-    $$('[data-preview]').forEach(function (row) {
-      row.addEventListener('pointerenter', function () { pimg.src = row.dataset.preview; pv.classList.add('on'); });
-      row.addEventListener('pointermove', function (e) { px(e.clientX); py(e.clientY); });
-      row.addEventListener('pointerleave', function () { pv.classList.remove('on'); });
-    });
 
     $$('.button, .download-link, .header-cta, .to-top, .search-btn').forEach(function (el) {
       var mx = gsap.quickTo(el, 'x', { duration: .6, ease: 'power3' }), my = gsap.quickTo(el, 'y', { duration: .6, ease: 'power3' });
