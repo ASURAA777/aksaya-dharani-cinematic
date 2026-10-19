@@ -362,7 +362,6 @@
     }
     hover('a, button, .skill-list li, .chips li, .course, .contact-card');
     hover('.project', 'Drag');
-    hover('#scene', 'Send path');
 
     $$('.button, .download-link, .header-cta, .to-top, .search-btn').forEach(function (el) {
       var mx = gsap.quickTo(el, 'x', { duration: .6, ease: 'power3' }), my = gsap.quickTo(el, 'y', { duration: .6, ease: 'power3' });

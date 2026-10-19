@@ -124,7 +124,6 @@ main{position:relative;z-index:1}
 .contact-card a,.contact-card p{font-size:1.1rem;color:var(--head);word-break:break-word}
 .contact-card a{border-bottom:1px solid var(--line2);transition:border-color .3s,color .3s}
 .contact-card a:hover{color:var(--accent);border-color:var(--accent)}
-.hint{position:absolute;right:var(--gutter);top:7.2rem;z-index:2;font-size:.88rem;color:var(--muted);max-width:18rem;text-align:right}
 .scroll-cue{position:absolute;left:var(--gutter);bottom:2.2rem;z-index:2;display:flex;align-items:center;gap:1.1rem;font-size:.88rem;color:var(--muted)}
 .scroll-cue i{display:block;width:4.4rem;height:1px;background:var(--line2);position:relative;overflow:hidden}
 .scroll-cue i::after{content:"";position:absolute;inset:0;background:var(--accent);animation:cue 2.6s var(--ease) infinite}
@@ -304,9 +303,6 @@ dialog#palette::backdrop{background:color-mix(in srgb,var(--bg) 70%,transparent)
 html.js [data-reveal]{opacity:0;transform:translateY(2.4rem)}
 html.js.no-motion [data-reveal]{opacity:1;transform:none}
 
-@media (max-width:1100px){
-  .hint{display:none}
-}
 @media (max-width:980px){
   .research-visual,.media-pair,.research-extras,.development-grid,.skills-layout,.project-grid{grid-template-columns:1fr;gap:2.4rem}
   .activity-group,.timeline-entry,.publication,.education-entry,.event{grid-template-columns:1fr;gap:.7rem}
