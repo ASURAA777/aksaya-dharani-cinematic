@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en" data-tone="midnight">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#050b12">
+  <meta name="description" content="Academic portfolio of Aksaya Dharani, Assistant Professor at Velammal Engineering College. Teaching, research, publications, and academic engagement.">
+  <title>Aksaya Dharani | Academic Portfolio</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/newsreader-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <script>try{var t=localStorage.getItem('tone');if(t)document.documentElement.dataset.tone=t}catch(e){}</script>
+  <script src="assets/vendor/gsap.min.js" defer></script>
+  <script src="assets/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="assets/vendor/lenis.min.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="preloader" aria-hidden="true"><span class="preloader-count">0</span><span class="preloader-bar"><i></i></span></div>
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor" aria-hidden="true"><span></span></div>
+<div class="preview" aria-hidden="true"><img alt=""></div>
+<div class="progress" aria-hidden="true"><i></i></div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="wordmark" href="#home" aria-label="Aksaya Dharani, home"><span class="monogram" aria-hidden="true">AD</span><span class="wordmark-name">Aksaya Dharani</span></a>
+    <div class="header-tools">
+      <div class="tones" role="radiogroup" aria-label="Colour tone">
+        <button type="button" role="radio" aria-checked="true" data-tone="midnight" aria-label="Midnight tone"><i></i></button>
+        <button type="button" role="radio" aria-checked="false" data-tone="slate" aria-label="Slate tone"><i></i></button>
+        <button type="button" role="radio" aria-checked="false" data-tone="glacier" aria-label="Glacier tone"><i></i></button>
+      </div>
+      <button class="search-btn" type="button" aria-haspopup="dialog">Search <kbd>Ctrl K</kbd></button>
+      <a class="header-cta" href="assets/Aksaya_Dharani_Resume.pdf" download>Download resume</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation">Menu</button>
+    </div>
+    <nav id="navigation" class="mobile-nav" aria-label="Main navigation">
+      <a href="#research">Research</a><a href="#teaching">Teaching</a><a href="#education">Education</a><a href="#projects">Projects</a><a href="#activities">Engagement</a><a href="#development">Development</a><a href="#skills">Skills</a>
+    </nav>
+  </div>
+</header>
+<nav class="dock" aria-label="Sections">
+  <a href="#home">Home</a><a href="#research">Research</a><a href="#teaching">Teaching</a><a href="#education">Education</a><a href="#projects">Projects</a><a href="#activities">Engagement</a><a href="#development">Development</a><a href="#skills">Skills</a>
+</nav>
+
+<main id="main">
+  <section class="hero" id="home" aria-labelledby="hero-title">
+    <canvas id="scene" aria-hidden="true"></canvas>
+    <div class="hero-vignette" aria-hidden="true"></div>
+    <div class="container hero-grid">
+      <img class="hero-figure" src="assets/img/aksaya-cutout.webp" width="742" height="1700" alt="Aksaya Dharani in a navy suit, arms crossed, leaning on the edge of her name" fetchpriority="high" decoding="async">
+      <div class="hero-copy">
+      <div class="hero-name">
+        <p class="hero-role">Assistant Professor</p>
+        <h1 id="hero-title">Aksaya Dharani</h1>
+        <p class="hero-institution">Velammal Engineering College, Chennai</p>
+      </div>
+      <div class="hero-rest">
+        <p class="hero-summary" data-blur>Dynamic assistant professor with expertise in network security, passionate about engaging in multifaceted research and advancing practical solutions through ongoing learning.</p>
+        <div class="hero-foot">
+        <div class="hero-actions"><a class="button" href="#research"><span>Explore research</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15 15 5M7 5h8v8" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a><a class="download-link" href="assets/Aksaya_Dharani_Resume.pdf" download>Download resume</a></div>
+      <aside class="contact-card tilt" aria-label="Contact">
+        <div><span class="label">Email</span><a href="mailto:aksayaitvec@gmail.com">aksayaitvec@gmail.com</a></div>
+        <div><span class="label">Phone</span><a href="tel:9080845149">9080845149</a></div>
+        <div><span class="label">Location</span><p>Chennai 600066</p></div>
+      </aside>
+        </div>
+      </div>
+      </div>
+    </div>
+    <p class="hint" aria-hidden="true">Move the pointer to disturb the network. Click to send a new path.</p>
+    <a class="scroll-cue" href="#research"><span>Scroll</span><i aria-hidden="true"></i></a>
+  </section>
+
+  <div class="marquee" data-velocity="1" aria-hidden="true"><div class="marquee-track"><span>Data Structures</span><b></b><span>Network Essentials</span><b></b><span>Cyber Forensics and Laws</span><b></b><span>Quantum Computing</span><b></b><span>Python Programming</span><b></b><span>C Programming</span><b></b></div></div>
+
+  <section class="section" id="research" aria-labelledby="research-title"><div class="container">
+    <div class="section-heading"><h2 id="research-title">Research and publications</h2></div>
+
+    <div class="research-visual">
+      <figure class="gif-frame" data-media><img src="assets/gif/signal-mesh.gif" alt="Animated network of connected nodes with a light path travelling across it" width="720" height="450"></figure>
+      <div class="research-side">
+        <div class="areas"><h3 class="mini-title">Research areas</h3><ul class="chips"><li>Network security</li><li>Cyber security</li><li>Machine learning</li><li>Attack path prediction</li><li>IoT</li><li>Blockchain</li><li>Wireless communication networks</li><li>Memory safety</li><li>Distributed Rust applications</li></ul></div>
+        <dl class="glance"><div><dt>Journals</dt><dd data-count="2">2</dd></div><div><dt>Patent application</dt><dd data-count="1">1</dd></div><div><dt>Book</dt><dd data-count="1">1</dd></div></dl>
+      </div>
+    </div>
+
+    <div class="rows-head"><h3>Journals</h3></div>
+    <div class="publication-list">
+      <article class="publication" data-preview="assets/img/research-network.jpg"><p class="when">March 2024</p><div><h3>Neural Network Based Attack Path Prediction Using Machine Learning in Cyber Security System</h3><p class="authors">Aksaya Dharani K</p><p class="citation"><i>International Journal of Intelligent Systems and Applications in Engineering</i>, Vol. 12, No. 21s, pp. 2611–2617, March 2024.</p></div></article>
+      <article class="publication" data-preview="assets/img/research-lock.jpg"><p class="when">June 2026</p><div><h3>RustGuard: A Compile-Time Verification Framework for Memory Safety in Distributed Rust Applications</h3><p class="authors">V. Prasanna Srinivasan, Aksaya Dharani K, Pramila K, Preethi Wilson G, Naveen G, and N. Ramshankar</p><p class="citation">June 2026; ISBN: 979-8-3315-7236-5</p></div></article>
+    </div>
+
+    <div class="research-extras">
+      <article class="research-note"><h3 class="mini-title">Patent application</h3><p class="note-title">Blockchain-Integrated IoT Framework for Secure and Scalable Wireless Communication Networks</p><p>Filed a utility patent application.</p><p class="identifier">Application No.: 202641095019</p></article>
+      <article class="research-note"><h3 class="mini-title">Book written</h3><p class="note-title">Computer Science &amp; Emerging Digital Technologies</p><p class="book-subtitle">Fundamentals, Programming, Networks, Artificial Intelligence, Cybersecurity, Cloud Computing, Data Science, IoT, Blockchain, and Emerging Technologies</p><p class="identifier">Published by Zenodo · ISBN: 979-8-18760156-1</p></article>
+    </div>
+  </div></section>
+
+  <section class="section" id="teaching" aria-labelledby="teaching-title"><div class="container">
+    <div class="section-heading"><h2 id="teaching-title">Teaching and experience</h2></div>
+    <figure class="media media-wide" data-media><img src="assets/img/teaching-lecture.jpg" alt="Professor standing before students seated at lecture desks" loading="lazy" decoding="async"></figure>
+
+    <div class="courses"><h3 class="mini-title">Courses taught</h3>
+      <ul class="course-grid">
+        <li class="course tilt"><span class="course-name">Data Structures</span></li>
+        <li class="course tilt"><span class="course-name">Network Essentials</span></li>
+        <li class="course tilt"><span class="course-name">Cyber Forensics and Laws</span></li>
+        <li class="course tilt"><span class="course-name">Quantum Computing</span></li>
+        <li class="course tilt"><span class="course-name">Python Programming</span></li>
+        <li class="course tilt"><span class="course-name">C Programming</span></li>
+      </ul>
+      <h3 class="mini-title">Accreditation documentation</h3>
+      <ul class="chips"><li>NAAC</li><li>ISO</li><li>NIRF</li></ul>
+    </div>
+
+    <div class="timeline"><i class="timeline-line" aria-hidden="true"></i>
+      <article class="timeline-entry"><div class="timeline-date"><span>June 2024 to current</span><span class="status">Current position</span></div><div class="timeline-content"><h3>Assistant Professor</h3><p class="institution">Velammal Engineering College, Chennai</p><p class="teaching-statement" data-scrollreveal>Delivered instruction in <strong>Data Structures</strong>, <strong>Network Essentials</strong>, <strong>Cyber Forensics and Laws</strong>, <strong>Quantum Computing</strong>, <strong>Python Programming</strong>, and <strong>C Programming</strong>, fostering student engagement and understanding.</p><ul class="detail-list"><li>Guided student projects and laboratory sessions.</li><li>Facilitated placement activities and enhanced student career development through targeted support.</li><li>Supported research initiatives by collaborating with faculty on data collection and analysis, and paper submissions.</li><li>Managed activities of the PAC appraisal committee by scheduling meetings and facilitating discussions.</li><li>Developed accreditation documentation for NAAC, ISO, and NIRF, contributing to institutional ranking improvements.</li></ul></div></article>
+      <article class="timeline-entry"><div class="timeline-date"><span>December 2021 to July 2022</span></div><div class="timeline-content"><h3>Intern</h3><p class="institution">Augusta Hitech Soft Solutions Pvt. Ltd, Coimbatore</p><ul class="detail-list"><li>Contributed to .NET development projects during internship.</li><li>Assisted in delivering an IoT client project by completing assigned development tasks.</li><li>Expanded knowledge across multiple technologies while adapting to the IT environment.</li><li>Prepared technical notes for Augusta Hitech Soft Solutions' development workflows.</li><li>Maintained accurate records of internship activities and completed work.</li><li>Built positive working relationships with staff and management.</li></ul></div></article>
+    </div>
+  </div></section>
+
+  <section class="section" id="education" aria-labelledby="education-title"><div class="container">
+    <div class="section-heading"><h2 id="education-title">Education</h2></div>
+    <figure class="media media-wide" data-media><img src="assets/img/education-campus.jpg" alt="Aerial view of a brick university campus building with gardens" loading="lazy" decoding="async"></figure>
+    <div class="education-list">
+      <article class="education-entry"><p class="when">May 2024</p><div><h3>M.E. Computer Science Engineering <span class="distinction">Distinction</span></h3><p class="institution">Velammal Engineering College, Surapet, Chennai</p><ul class="detail-list"><li>Completed with Distinction.</li><li>Participated in a workshop on Data Science and Applications.</li><li>Completed a Capstone Project in Machine Learning.</li></ul></div></article>
+      <article class="education-entry"><p class="when">May 2022</p><div><h3>B.Tech. Information Technology <span class="distinction">First class</span></h3><p class="institution">Velammal Engineering College, Surapet, Chennai</p><ul class="detail-list"><li>Completed with First class.</li><li>Participated in various Hackathons and Symposiums.</li><li>Completed a Capstone Project in Machine Learning — LSTM.</li></ul></div></article>
+      <article class="education-entry school"><p class="when">May 2018</p><div><h3>Higher School: Bio-Math</h3><p class="institution">Velammal Vidhyashram, Surapet, Chennai</p></div></article>
+      <article class="education-entry school"><p class="when">May 2016</p><div><h3>High School</h3><p class="institution">Velammal Vidhyashram, Surapet, Chennai</p></div></article>
+    </div>
+  </div></section>
+
+  <section class="section container" id="projects" aria-labelledby="projects-title">
+    <div class="section-heading"><h2 id="projects-title">Projects</h2></div>
+    <div class="project-grid">
+      <article class="project tilt"><figure class="media project-media"><img src="assets/img/project-face.jpg" alt="Mesh-wireframe face lit by glowing blue eyes, like a face-detection render" width="1100" height="700" loading="lazy" decoding="async"><span class="project-number">1</span></figure><div><h3>Face Detection</h3><p>A project to detect faces using OpenCV.</p></div></article>
+      <article class="project tilt"><figure class="media project-media"><img src="assets/img/project-arduino.jpg" alt="Arduino board wired to a breadboard with jumper cables" width="1100" height="700" loading="lazy" decoding="async"><span class="project-number">2</span></figure><div><h3>Smart Home Using IoT</h3><p>An IoT project using Arduino for smart home development.</p></div></article>
+      <article class="project tilt"><figure class="media project-media"><img src="assets/img/project-attendance.jpg" alt="Students seated in a lecture hall, smiling and waving at a phone" width="1100" height="700" loading="lazy" decoding="async"><span class="project-number">3</span></figure><div><h3>Attendance Management</h3><p>A project that maintains and manipulates the attendance of each student.</p></div></article>
+      <article class="project tilt"><figure class="media project-media"><img src="assets/img/project-stock.jpg" alt="Candlestick stock chart with moving-average lines on a dark screen" width="1100" height="700" loading="lazy" decoding="async"><span class="project-number">4</span></figure><div><h3>Stock Market Prediction using Machine Learning</h3><p>Machine Learning Project using the LSTM Algorithm.</p></div></article>
+      <article class="project tilt"><figure class="media project-media"><img src="assets/img/research-network.jpg" alt="Glowing network of connected nodes" width="1100" height="700" loading="lazy" decoding="async"><span class="project-number">5</span></figure><div><h3>Neural Network Based Attack Path Prediction Using Machine Learning in Cyber Security System</h3><p>Project in the Wireless sensor network domain using the Machine Learning Algorithm LRCN.</p></div></article>
+    </div>
+  </section>
+
+  <section class="section" id="activities" aria-labelledby="activities-title"><div class="container">
+    <div class="section-heading"><h2 id="activities-title">Academic engagement</h2></div>
+    <div class="media-pair">
+      <figure class="media media-tall" data-media><img src="assets/img/engagement-stage.jpg" alt="Speaker on a central stage addressing a large audience" loading="lazy" decoding="async"></figure>
+      <figure class="gif-frame" data-media><img src="assets/gif/packet-flow.gif" alt="Animated lanes of data packets, some stopped at a barrier" width="720" height="450"></figure>
+    </div>
+  </div>
+    <div class="marquee marquee-outline" data-velocity="-1" aria-hidden="true"><div class="marquee-track"><span>Hrida AI private Limited</span><b></b><span>Digialert Solutions Private Limited</span><b></b><span>Azefox Innnovations</span><b></b><span>Hpyerlynx Infotech Private Limited</span><b></b><span>TechGreech Cyberlabs Private Limited</span><b></b></div></div>
+  <div class="container">
+
+    <div class="activity-group"><div class="section-aside"><h3>MoUs signed</h3></div><ul class="mou-list"><li><span>Hrida AI private Limited</span><time datetime="2026-02-18">18 Feb 2026</time></li><li><span>Digialert Solutions Private Limited</span><time datetime="2026-09-30">30 Sep 2026</time></li><li><span>Azefox Innnovations</span><time datetime="2025-02-27">27 Feb 2025</time></li><li><span>Hpyerlynx Infotech Private Limited</span><time datetime="2025-03-28">28 Mar 2025</time></li><li><span>TechGreech Cyberlabs Private Limited</span><time datetime="2025-02-20">20 Feb 2025</time></li></ul></div>
+    <div class="activity-group"><div class="section-aside"><h3>FDP organized</h3></div><div class="events"><article class="event"><p class="when">18–23 May 2026</p><h4>Artificial Intelligence in Cybersecurity: From Foundations to Future Frontiers</h4><p>A six-day online Faculty Development Programme (FDP).</p></article></div></div>
+    <div class="activity-group"><div class="section-aside"><h3>Workshops organized</h3></div><div class="events"><article class="event"><p class="when">6 March 2026</p><h4>FlagHunt: Beginner to Pro CTF Bootcamp</h4><p>A Cybersecurity technical workshop by Mr. Vinod Senthil, Managing Director and CEO, DigiAlert.</p></article><article class="event"><p class="when">19 September 2025</p><h4>Entrepreneurial Innovation through Smart IoT System Development Using Raspberry Pi</h4><p>Technical session by Mrs. Elakkia A. G., Founder and Senior Project Consultant, M/s ENSLOT, along with interns Sujithra S., Samitha R., and Gowtham R.</p></article></div></div>
+    <div class="activity-group"><div class="section-aside"><h3>Seminars organized</h3></div><div class="events">
+      <article class="event"><p class="when">17 August 2024</p><h4>A Game World: Introduction to C# with Unity</h4><p>A technical session for second-year students by Ms. Manishma S., Software Engineer, Light &amp; Wonder.</p></article>
+      <article class="event"><p class="when">18 February 2025</p><h4>Burp Suite – A Cybersecurity Tool</h4><p>A technical session by Mr. Karthikeyan K., Product Security, Logitech.</p></article>
+      <article class="event"><p class="when">27 February 2025</p><h4>Thick Client Penetration Testing: Exploiting the Unseen Vulnerabilities</h4><p>A technical session by Mr. Jaswant R., Product Security, Logitech.</p></article>
+      <article class="event"><p class="when">20 February 2025</p><h4>Mastering OSINT</h4><p>A technical session by Mr. Sriram Kesavan, Founder and Director of Security, TG CyberLabs – Secufra Labs.</p></article>
+      <article class="event"><p class="when">22 June 2025</p><h4>Cybersecurity Essentials</h4><p>A technical session by Mr. Pradhan Vijayakumar, Managing Director, Zero2Infynite.</p></article>
+    </div></div>
+    <div class="activity-group"><div class="section-aside"><h3>Events organized</h3></div><div class="events"><article class="event"><p class="when">2 August 2025</p><h4>Noctivus</h4><p>National-level CSE (Cyber Security) symposium at Velammal Engineering College.</p></article><article class="event"><p class="when">19 September 2026</p><h4>Aazhi CTF</h4><p>Inter-college-level Capture the Flag (CTF) cybersecurity competition.</p></article><article class="event"><p class="when">3 February 2026</p><h4>Akira CTF</h4><p>Intra-college-level Capture the Flag (CTF) cybersecurity competition.</p></article></div></div>
+  </div></section>
+
+  <section class="section" id="development" aria-labelledby="development-title"><div class="container">
+    <div class="section-heading"><h2 id="development-title">Professional development</h2></div>
+    <div class="development-grid"><div><h3 class="subheading">Certifications</h3><ul class="credential-list"><li>NPTEL - Cloud Computing <span class="distinction">ELITE</span></li><li>NPTEL - Privacy and Security in Online Social Media</li></ul><h3 class="subheading training-heading">Industrial training</h3><p>An Industrial Training Programme on “Understanding and Working with the AWS Platform”, conducted by J7 Technology Solutions Pvt. Ltd., Tenkasi.</p></div><div><h3 class="subheading">FDPs attended</h3><ul class="credential-list"><li>Completed “Data Science Using Python workshop” conducted by the Department of Computer Science and Engineering at NITTTR, Chandigarh, from 25–29 November 2024.</li><li>Completed “Cloud Computing” through the NPTEL–AICTE Faculty Development Programme (FDP).</li><li>Participated in “Quantum Intelligence: AI–Quantum Convergence in Cyber Defense and Space Technologies” at Panimalar Engineering College, from 1–6 December 2025.</li></ul></div></div>
+  </div></section>
+
+  <section class="section" id="skills" aria-labelledby="skills-title"><div class="container">
+    <div class="section-heading"><h2 id="skills-title">Skills and additional information</h2></div>
+    <div class="skills-layout"><div><h3 class="subheading">Skills</h3><ul class="skill-list"><li>Curriculum development</li><li>Teaching excellence</li><li>Lecturing</li><li>Grant writing</li><li>Presentation skills</li><li>Time management</li><li>Organizational multitasking</li><li>Team collaboration</li><li>Organizational skills</li><li>Leadership and public speaking</li><li>Teaching</li></ul></div><div class="personal-details"><div><h3 class="subheading">Languages</h3><p>English <span>Proficient (C2)</span><br>Tamil <span>Native</span></p></div><div><h3 class="subheading">Activities and honors</h3><p>YRC Member (2018–2022)</p></div><div><h3 class="subheading">Interests</h3><p>Sports, Dance, Creative works, Designing, Research and Journal.</p></div></div></div>
+  </div></section>
+</main>
+
+<footer class="site-footer"><div class="container">
+  <p class="footer-big" aria-hidden="true">Aksaya Dharani</p>
+  <div class="footer-row"><div><span class="label">Email</span><a href="mailto:aksayaitvec@gmail.com">aksayaitvec@gmail.com</a></div><div><span class="label">Phone</span><a href="tel:9080845149">9080845149</a></div><div><span class="label">Location</span><p>Chennai 600066</p></div><div><span class="label">Resume</span><a href="assets/Aksaya_Dharani_Resume.pdf" download>Download resume</a></div><a class="to-top" href="#home">Back to top</a></div>
+  <p class="credit">Photographs from Unsplash are placeholders. Animated loops are generated for this site.</p>
+</div></footer>
+
+<dialog id="palette" aria-label="Search this portfolio">
+  <div class="palette-box">
+    <label class="sr" for="palette-input">Search sections, publications, projects and events</label>
+    <input id="palette-input" type="search" placeholder="Search sections, publications, projects, events" autocomplete="off" role="combobox" aria-expanded="true" aria-controls="palette-list" aria-autocomplete="list">
+    <ul id="palette-list" role="listbox" aria-label="Results"></ul>
+    <p class="palette-foot"><span>Enter to jump</span><span>Esc to close</span></p>
+  </div>
+</dialog>
+</body>
+</html>
