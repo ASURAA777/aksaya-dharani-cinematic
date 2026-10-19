@@ -362,7 +362,6 @@
     }
     hover('a, button, .skill-list li, .chips li, .course, .contact-card');
     hover('.project', 'Drag');
-    hover('.publication', 'Read');
     hover('#scene', 'Send path');
 
     $$('.button, .download-link, .header-cta, .to-top, .search-btn').forEach(function (el) {
