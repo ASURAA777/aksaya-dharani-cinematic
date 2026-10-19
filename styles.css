@@ -182,6 +182,10 @@ html.js.no-motion .media,html.js.no-motion .gif-frame{clip-path:none}
 .publication:hover{padding-left:1rem}
 .publication h3{font-size:clamp(1.7rem,2.9vw,2.7rem);line-height:1.2;letter-spacing:-.02em;max-width:24em;transition:color .4s}
 .publication:hover h3{color:var(--accent)}
+.publication h3 a{color:inherit;text-decoration:none}
+.publication h3 a::after{content:"\2197";font-family:var(--sans);font-size:.5em;margin-left:.45em;vertical-align:.55em;opacity:.55;transition:opacity .3s,transform .4s var(--ease);display:inline-block}
+.publication:hover h3 a::after{opacity:1;transform:translate(.15em,-.15em)}
+.publication h3 a:focus-visible{outline-offset:6px}
 .authors{font-size:1.12rem;margin-top:1.3rem;color:var(--head)}
 .citation{font-size:1.04rem;color:var(--muted);margin-top:.5rem;max-width:44em}
 .research-extras{display:grid;grid-template-columns:1fr 1fr;gap:4.5rem;margin-top:6rem}
