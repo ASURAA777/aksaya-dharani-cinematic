@@ -5,9 +5,8 @@ A single-page, cinematic portfolio for Aksaya Dharani, Assistant Professor (netw
 ## Highlights
 
 - **Hero:** a cut-out portrait leaning on the oversized name, over an interactive 3D network canvas (move the pointer to disturb it, click to send an attack path).
-- **Motion:** preloader, word-by-word reveals, velocity-reactive marquees (the company marquee runs full width), parallax media and a pinned horizontal run through the projects.
+- **Motion:** preloader, word-by-word reveals, parallax media, and pinned horizontal runs through the projects and professional development.
 - **Themes:** Midnight, Slate and Glacier tone switcher in the header (choice is remembered).
-- **Command palette:** press `Ctrl K` (or use the Search button) to jump to any course, project or event.
 - **Responsive and accessible:** works from phone to desktop, keeps a sensible heading order and honours `prefers-reduced-motion`.
 
 ## Run it
@@ -26,7 +25,7 @@ Opening `index.html` straight from disk also works for most of the page, but a s
 ```
 index.html        page content
 styles.css        all styling and the three themes
-script.js         animation, hero canvas, palette, theme switcher
+script.js         animation, hero canvas, theme switcher
 assets/
   img/            photos, project images and the hero cut-out (aksaya-cutout.webp)
   gif/            animated diagrams

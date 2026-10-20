@@ -156,50 +156,8 @@
   if (reduce) { spawnPath(); paths.forEach(function (p) { p.t = 3; }); draw(0, true); }
   else { spawnPath(); (function loop(ts) { if (heroVisible && !document.hidden) draw(ts, false); requestAnimationFrame(loop); })(0); }
 
-  /* ---------- search palette ---------- */
-  var dlg = $('#palette'), input = $('#palette-input'), list = $('#palette-list'), index = null, shown = [], sel = 0;
-  function buildIndex() {
-    var map = [['main section h2', 'Section'], ['.publication h3', 'Publication'], ['.note-title', 'Patent or book'], ['.course-name', 'Course'], ['.timeline-content h3', 'Experience'], ['.education-entry h3', 'Education'], ['.project h3', 'Project'], ['.mou-list li span', 'MoU'], ['.event h4', 'Event'], ['.credential-list li', 'Development'], ['.skill-list li', 'Skill']];
-    index = [];
-    map.forEach(function (m) { $$(m[0]).forEach(function (el) { var t = (el.getAttribute('aria-label') || el.textContent).replace(/\s+/g, ' ').trim(); var box = el.closest('article, li') || el; if (t) index.push({ t: t, k: m[1], el: el, s: (m[1] === 'Section' ? t : box.textContent.replace(/\s+/g, ' ')) }); }); });
-  }
-  function render() {
-    var q = input.value.toLowerCase().split(/\s+/).filter(Boolean);
-    shown = index.filter(function (it) { var s = (it.t + ' ' + it.k + ' ' + it.s).toLowerCase(); return q.every(function (w) { return s.indexOf(w) > -1; }); }).slice(0, 40);
-    sel = 0; list.innerHTML = '';
-    if (!shown.length) { list.innerHTML = '<li class="palette-empty" role="presentation">Nothing matches. Try a course, project or event name.</li>'; return; }
-    shown.forEach(function (it, i) {
-      var li = document.createElement('li'); li.id = 'pal-' + i; li.setAttribute('role', 'option'); li.setAttribute('aria-selected', String(i === 0));
-      var s = document.createElement('span'); s.textContent = it.t.length > 90 ? it.t.slice(0, 88) + '…' : it.t;
-      var k = document.createElement('small'); k.textContent = it.k; li.appendChild(s); li.appendChild(k);
-      li.addEventListener('click', function () { go(i); }); list.appendChild(li);
-    });
-    input.setAttribute('aria-activedescendant', 'pal-0');
-  }
-  function mark(i) {
-    var items = $$('li[role="option"]', list); if (!items.length) return;
-    sel = (i + items.length) % items.length;
-    items.forEach(function (li, j) { li.setAttribute('aria-selected', String(j === sel)); });
-    items[sel].scrollIntoView({ block: 'nearest' }); input.setAttribute('aria-activedescendant', items[sel].id);
-  }
-  function go(i) {
-    var it = shown[i]; if (!it) return; dlg.close();
-    var target = it.el.closest('#projects') ? $('#projects') : it.el;
-    setTimeout(function () { if (lenis) lenis.scrollTo(target, { offset: -120, duration: 1.4 }); else target.scrollIntoView({ block: 'center' }); }, 60);
-  }
-  function openPalette() { if (!index) buildIndex(); input.value = ''; render(); dlg.showModal(); input.focus(); if (lenis) lenis.stop(); }
-  dlg.addEventListener('close', function () { if (lenis) lenis.start(); });
-  dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
-  input.addEventListener('input', render);
-  input.addEventListener('keydown', function (e) {
-    if (e.key === 'ArrowDown') { e.preventDefault(); mark(sel + 1); }
-    else if (e.key === 'ArrowUp') { e.preventDefault(); mark(sel - 1); }
-    else if (e.key === 'Enter') { e.preventDefault(); go(sel); }
-  });
-  $('.search-btn').addEventListener('click', openPalette);
   document.addEventListener('keydown', function (e) {
-    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); dlg.open ? dlg.close() : openPalette(); }
-    else if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') { setMenu(false); toggle.focus(); }
+    if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') { setMenu(false); toggle.focus(); }
   });
 
   if (reduce || !hasLibs) { root.classList.add('loaded'); return; }
@@ -298,26 +256,10 @@
     var n = parseInt(el.dataset.count, 10), o = { v: 0 }; el.textContent = '0';
     ScrollTrigger.create({ trigger: el, start: 'top 92%', once: true, onEnter: function () { gsap.to(o, { v: n, duration: 1.6, ease: 'power2.out', onUpdate: function () { el.textContent = Math.round(o.v); } }); } });
   });
-  ['.publication', '.research-note', '.timeline-entry', '.education-entry', '.activity-group', '.event', '.course', '.credential-list li', '.personal-details > div', '.chips li', '.skill-list li', '.glance > div', '.mini-title', '.footer-row > *'].forEach(function (sel) {
+  ['.publication', '.timeline-entry', '.education-entry', '.activity-group', '.event', '.personal-details > div', '.chips li', '.skill-list li', '.glance > div', '.mini-title', '.footer-row > *'].forEach(function (sel) {
     ScrollTrigger.batch(sel, { start: 'top 93%', once: true, onEnter: function (els) { gsap.fromTo(els, { y: 36, opacity: 0 }, { y: 0, opacity: 1, duration: 1.1, ease: 'expo.out', stagger: .07, clearProps: 'transform' }); } });
   });
   gsap.from('.footer-big', { yPercent: 30, opacity: 0, duration: 1.6, ease: 'expo.out', scrollTrigger: { trigger: '.footer-big', start: 'top 95%' } });
-
-  /* ---------- velocity marquees ---------- */
-  var marquees = $$('.marquee').map(function (m) {
-    var track = $('.marquee-track', m); track.innerHTML += track.innerHTML + track.innerHTML + track.innerHTML;
-    return { track: track, dir: parseFloat(m.dataset.velocity) || 1, x: 0 };
-  });
-  var vel = 0, lastScroll = window.scrollY;
-  gsap.ticker.add(function (t, dt) {
-    var y = window.scrollY, v = (y - lastScroll) / Math.max(dt, 1); lastScroll = y; vel += (v - vel) * .08;
-    marquees.forEach(function (m) {
-      var w = m.track.scrollWidth / 4;
-      m.x -= m.dir * (.05 + Math.min(Math.abs(vel), 4) * .35) * dt * (vel * m.dir < 0 ? -1 : 1);
-      if (m.x <= -w) m.x += w; if (m.x > 0) m.x -= w;
-      m.track.style.transform = 'translate3d(' + m.x + 'px,0,0)';
-    });
-  });
 
   /* ---------- projects: pinned horizontal run ---------- */
   var mm = gsap.matchMedia();
@@ -337,6 +279,20 @@
       wrap.parentNode.insertBefore(grid, wrap); wrap.remove(); meter.remove();
       sec.classList.remove('hscroll'); sec.classList.add('container'); $('.section-heading', sec).classList.remove('container');
     };
+  });
+
+  /* ---------- professional development: pinned slideshow ---------- */
+  mm.add('(min-width: 981px) and (min-height: 600px)', function () {
+    var sec = $('#development'), wrap = $('.dev-wrap', sec), track = $('.dev-track', sec), n = $$('.dev-slide', sec).length;
+    var meter = document.createElement('div'); meter.className = 'proj-meter'; meter.setAttribute('aria-hidden', 'true');
+    meter.innerHTML = '<span>1</span><i></i><span>' + n + '</span>'; sec.appendChild(meter);
+    sec.classList.add('dscroll');
+    var dist = function () { return Math.max(0, track.scrollWidth - innerWidth); };
+    var tween = gsap.to(track, { x: function () { return -dist(); }, ease: 'none',
+      scrollTrigger: { trigger: sec, start: 'top top', end: function () { return '+=' + dist(); }, pin: true, scrub: .6, invalidateOnRefresh: true, anticipatePin: 1,
+        onUpdate: function (s) { meter.style.setProperty('--p', s.progress); meter.firstChild.textContent = Math.min(n, 1 + Math.floor(s.progress * n)); } } });
+    wrap.scrollLeft = 0;
+    return function () { tween.kill(); gsap.set(track, { clearProps: 'all' }); meter.remove(); sec.classList.remove('dscroll'); };
   });
 
   /* ---------- dock ---------- */
@@ -360,10 +316,10 @@
         el.addEventListener('pointerleave', function () { cursor.classList.remove('big', 'label'); });
       });
     }
-    hover('a, button, .skill-list li, .chips li, .course, .contact-card');
+    hover('a, button, .skill-list li, .chips li, .contact-card');
     hover('.project', 'Drag');
 
-    $$('.button, .download-link, .header-cta, .to-top, .search-btn').forEach(function (el) {
+    $$('.button, .download-link, .header-cta, .to-top').forEach(function (el) {
       var mx = gsap.quickTo(el, 'x', { duration: .6, ease: 'power3' }), my = gsap.quickTo(el, 'y', { duration: .6, ease: 'power3' });
       el.addEventListener('pointermove', function (e) { var r = el.getBoundingClientRect(); mx((e.clientX - r.left - r.width / 2) * .25); my((e.clientY - r.top - r.height / 2) * .35); });
       el.addEventListener('pointerleave', function () { mx(0); my(0); });
